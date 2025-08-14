@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Implementation Roadmap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS removed -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+    /* Utility for hiding elements (replaces Tailwind's .hidden) */
+    .hidden { display: none !important; }
+        /* Replacements for Tailwind utility classes used in HTML */
+        .bg-gray-50 { background-color: #f9fafb !important; }
+        .text-gray-800 { color: #1f2937 !important; }
+        .bg-white { background-color: #fff !important; }
+        .p-4 { padding: 1rem !important; }
+        .p-6 { padding: 1.5rem !important; }
+        .p-8, .md\:p-8 { padding: 2rem !important; }
+        .rounded-lg { border-radius: 0.5rem !important; }
+        .shadow-md { box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; }
+        .flex { display: flex !important; }
+        .justify-between { justify-content: space-between !important; }
+        .items-center { align-items: center !important; }
+        .mb-4 { margin-bottom: 1rem !important; }
+        .text-xl { font-size: 1.25rem !important; }
+        .font-semibold { font-weight: 600 !important; }
+        .space-x-4 > *:not(:last-child) { margin-right: 1rem !important; }
+        .space-x-2 > *:not(:last-child) { margin-right: 0.5rem !important; }
+        .w-4 { width: 1rem !important; }
+        .h-4 { height: 1rem !important; }
+        .rounded-full { border-radius: 9999px !important; }
+        .text-sm { font-size: 0.875rem !important; }
+        .cursor-pointer { cursor: pointer !important; }
+        .pr-4 { padding-right: 1rem !important; }
+        .w-5 { width: 1.25rem !important; }
+        .h-5 { height: 1.25rem !important; }
+        .container { max-width: 1200px; margin: 0 auto; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f9fa;
@@ -165,7 +193,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <div class="container mx-auto p-4 md:p-8">
+    <div class="container p-4 md:p-8">
         <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-semibold"></h2>
