@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loudoun Water - AI Risk Management Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight">AI Risk Management Framework</h1>
+            <p class="mt-4 text-lg text-blue-100 max-w-3xl mx-auto">Our commitment to the safe, ethical, and responsible use of Artificial Intelligence in service to our community.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Guiding Principles Section -->
+        <section id="principles" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Our Guiding Principles</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Every AI initiative at Loudoun Water is built on a foundation of core values that ensure we act in the best interest of the public.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Principle Card: Public Trust -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-semibold">Public Trust & Transparency</h3>
+                    </div>
+                    <p class="text-gray-600">We ensure our AI systems are fair, accountable, and explainable to build and maintain your trust.</p>
+                </div>
+                <!-- Principle Card: Safety & Reliability -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                       <svg class="w-8 h-8 text-blue-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <h3 class="text-xl font-semibold">Safety & Reliability</h3>
+                    </div>
+                    <p class="text-gray-600">The integrity of our critical infrastructure is paramount. Our AI systems are rigorously tested to ensure they enhance, not compromise, safety.</p>
+                </div>
+                <!-- Principle Card: Security & Privacy -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <h3 class="text-xl font-semibold">Security & Privacy</h3>
+                    </div>
+                    <p class="text-gray-600">We protect your data. Our AI systems are built with robust security controls to safeguard sensitive information.</p>
+                </div>
+                <!-- Principle Card: Equity & Fairness -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h3 class="text-xl font-semibold">Equity & Fairness</h3>
+                    </div>
+                    <p class="text-gray-600">We actively work to ensure our AI systems are fair, equitable, and do not perpetuate or amplify existing biases.</p>
+                </div>
+                <!-- Principle Card: Human-in-the-Loop -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <h3 class="text-xl font-semibold">Human-in-the-Loop</h3>
+                    </div>
+                    <p class="text-gray-600">Technology supports, but does not replace, human expertise. Critical decisions will always be subject to human review and approval.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Framework Components Section -->
+        <section id="framework">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Framework in Action</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Accordion Item 1: Risk Identification -->
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left text-xl font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                        Risk Identification & Assessment
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-4 pt-2">
+                            <p class="text-gray-600 mb-6">The first step is understanding potential risks across the AI lifecycle. This includes:</p>
+                            <ul class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                                <li><b>Data Quality and Bias:</b> Ensuring our data is accurate, complete, and doesn't lead to flawed AI models.</li>
+                                <li><b>Model Performance and Reliability:</b> Making sure our models perform as expected and don't cause operational issues.</li>
+                                <li><b>Cybersecurity:</b> Protecting our AI systems from attacks like data poisoning or model tampering.</li>
+                                <li><b>Ethical and Social Impacts:</b> Considering unintended consequences like algorithmic bias.</li>
+                            </ul>
+                            <h4 class="font-semibold text-lg mb-4">Risk Assessment Matrix</h4>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white border border-gray-200">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th class="py-2 px-4 border-b">Likelihood</th>
+                                            <th class="py-2 px-4 border-b">Insignificant</th>
+                                            <th class="py-2 px-4 border-b">Minor</th>
+                                            <th class="py-2 px-4 border-b">Moderate</th>
+                                            <th class="py-2 px-4 border-b">Major</th>
+                                            <th class="py-2 px-4 border-b">Catastrophic</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td class="py-2 px-4 border-b font-medium">Almost Certain</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                            <td class="py-2 px-4 border-b bg-red-100 text-red-800">Extreme</td>
+                                            <td class="py-2 px-4 border-b bg-red-100 text-red-800">Extreme</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td class="py-2 px-4 border-b font-medium">Likely</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                            <td class="py-2 px-4 border-b bg-red-100 text-red-800">Extreme</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td class="py-2 px-4 border-b font-medium">Possible</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td class="py-2 px-4 border-b font-medium">Unlikely</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-orange-100 text-orange-800">High</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td class="py-2 px-4 border-b font-medium">Rare</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-green-100 text-green-800">Low</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                            <td class="py-2 px-4 border-b bg-yellow-100 text-yellow-800">Medium</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2: Mitigation & Control -->
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left text-xl font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                        Risk Mitigation & Control
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-4 pt-2">
+                            <p class="text-gray-600 mb-6">We implement specific strategies to manage identified risks, including:</p>
+                            <ul class="list-disc list-inside space-y-3 text-gray-700">
+                                <li><b>Data Governance:</b> Implementing robust practices to ensure data quality, integrity, and security.</li>
+                                <li><b>Model Validation and Testing:</b> Rigorously testing models for accuracy, reliability, and fairness before deployment.</li>
+                                <li><b>Cybersecurity Controls:</b> Using strong security measures to protect our AI systems from threats.</li>
+                                <li><b>Ethical Review:</b> Establishing a review process to assess the social and ethical impacts of AI projects.</li>
+                                <li><b>Human Oversight:</b> Ensuring meaningful human supervision for all high-risk AI applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 3: Governance & Oversight -->
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left text-xl font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                        Governance & Oversight
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-4 pt-2">
+                            <p class="text-gray-600 mb-6">Clear roles and responsibilities are essential for effective risk management:</p>
+                             <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">AI Steering Committee</h4>
+                                    <p class="text-gray-700">A cross-functional team providing strategic direction and oversight for our entire AI program.</p>
+                                </div>
+                                 <div>
+                                    <h4 class="font-semibold text-lg">Chief Technology Officer (CTO)</h4>
+                                    <p class="text-gray-700">Leads the implementation of this framework and ensures AI initiatives align with our core mission.</p>
+                                </div>
+                                 <div>
+                                    <h4 class="font-semibold text-lg">Data Scientists & Engineers</h4>
+                                    <p class="text-gray-700">Manage the day-to-day development and deployment of AI models in accordance with this framework.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4: Model Lifecycle Management -->
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left text-xl font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                        Model Lifecycle Management
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-4 pt-2">
+                            <p class="text-gray-600 mb-6">We manage risks at every stage of an AI model's life, from concept to retirement.</p>
+                            <ol class="relative border-l border-gray-200">                  
+                                <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">1. Conception & Design</h3>
+                                    <p class="mb-4 text-base font-normal text-gray-600">Define the problem and assess the feasibility and risks of using AI.</p>
+                                </li>
+                                <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">2. Data Collection & Preparation</h3>
+                                    <p class="text-base font-normal text-gray-600">Ensure data is accurate, complete, and representative.</p>
+                                </li>
+                                <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">3. Model Development & Training</h3>
+                                    <p class="text-base font-normal text-gray-600">Build the model and test for bias and fairness.</p>
+                                </li>
+                                 <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">4. Model Validation & Testing</h3>
+                                    <p class="text-base font-normal text-gray-600">Rigorously test the model's performance and reliability.</p>
+                                </li>
+                                 <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">5. Deployment</h3>
+                                    <p class="text-base font-normal text-gray-600">Release the model with proper monitoring and controls.</p>
+                                </li>
+                                 <li class="mb-10 ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">6. Monitoring & Maintenance</h3>
+                                    <p class="text-base font-normal text-gray-600">Continuously monitor performance and retrain as needed.</p>
+                                </li>
+                                 <li class="ml-4">
+                                    <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                                    <h3 class="text-lg font-semibold text-gray-900">7. Retirement</h3>
+                                    <p class="text-base font-normal text-gray-600">Decommission the model when it's no longer effective or needed.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h3 class="text-2xl font-bold mb-2">A Living Document</h3>
+            <p class="text-gray-400 max-w-2xl mx-auto">This framework is not static. We will continuously review and update our approach as AI technologies and best practices evolve, ensuring we always operate at the forefront of responsible innovation.</p>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2024 Loudoun Water. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for accordion functionality
+        const accordionToggles = document.querySelectorAll('.accordion-toggle');
+
+        accordionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('svg');
+
+                // Close other open accordions
+                accordionToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        otherToggle.nextElementSibling.style.maxHeight = null;
+                        otherToggle.querySelector('svg').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current accordion
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
