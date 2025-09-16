@@ -387,12 +387,7 @@
                     ganttBody.appendChild(taskRow);
                 });
             });
-            
-            // Add Today Line
-            const currentMonth = 1.5; // Mid-point of month 2
-            const quarterWidth = ganttQuarterHeader.offsetWidth / totalQuarters;
-            const linePosition = (currentMonth / 3) * quarterWidth;
-
+        
 
             // Add event listeners for collapsing
             document.querySelectorAll('.gantt-phase-header').forEach(header => {
