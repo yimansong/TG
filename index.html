@@ -287,21 +287,37 @@
             const taskNameWidth = 250;
 
             // Generate Quarter Headers and Grid Columns
+            // Start from Q3, 2025
+            let startQuarter = 3;
+            let startYear = 2025;
+            let quarter = startQuarter;
+            let year = startYear;
             for (let i = 1; i <= totalQuarters; i++) {
-                const year = Math.ceil(i / 4);
-                const bgClass = year % 2 === 0 ? 'bg-year-even' : 'bg-year-odd';
-
+                const bgClass = (year % 2 === 0) ? 'bg-year-even' : 'bg-year-odd';
+                const quarterLabel = `Q${quarter}, ${year}`;
                 const quarterEl = document.createElement('div');
                 quarterEl.classList.add('gantt-quarter', bgClass);
-                quarterEl.textContent = `Q${i}`;
+                quarterEl.textContent = quarterLabel;
                 ganttQuarterHeader.appendChild(quarterEl);
+                quarter++;
+                if (quarter > 4) {
+                    quarter = 1;
+                    year++;
+                }
             }
+            // Reset for grid columns
+            quarter = startQuarter;
+            year = startYear;
             for (let i = 1; i <= totalQuarters; i++) {
-                const year = Math.ceil(i / 4);
-                const bgClass = year % 2 === 0 ? 'bg-year-even' : 'bg-year-odd';
+                const bgClass = (year % 2 === 0) ? 'bg-year-even' : 'bg-year-odd';
                 const gridCol = document.createElement('div');
                 gridCol.classList.add('gantt-grid-col', bgClass);
                 ganttGrid.appendChild(gridCol);
+                quarter++;
+                if (quarter > 4) {
+                    quarter = 1;
+                    year++;
+                }
             }
 
             // Generate Gantt Rows
