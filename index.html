@@ -393,10 +393,6 @@
             const quarterWidth = ganttQuarterHeader.offsetWidth / totalQuarters;
             const linePosition = (currentMonth / 3) * quarterWidth;
 
-            const todayLine = document.createElement('div');
-            todayLine.classList.add('today-line');
-            todayLine.style.left = `${taskNameWidth + linePosition}px`;
-            ganttContainer.appendChild(todayLine);
 
             // Add event listeners for collapsing
             document.querySelectorAll('.gantt-phase-header').forEach(header => {
