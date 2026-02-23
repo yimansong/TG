@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lifecycle Governance Wheel</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX compilation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Simple SVG Icon components to replace Lucide imports in standalone
+        const Icon = ({ name, className = "w-5 h-5" }) => {
+            useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, [name]);
+            return <i data-lucide={name} className={className}></i>;
+        };
+
+        const lifecycleStages = [
+            {
+                id: 'planning',
+                title: 'Proposal & Planning',
+                icon: 'clipboard-check',
+                nist: ['Govern', 'Map'],
+                color: 'bg-blue-500',
+                textColor: 'text-blue-700',
+                description: 'The inception phase where the business case and risk profile are first established.',
+                controls: [
+                    { label: 'AI Inventory Registration', detail: 'Formal entry into the corporate AI registry.' },
+                    { label: 'Business Impact Assessment (BIA)', detail: 'Classification of criticality (Low to Prohibited).' },
+                    { label: 'Ethical Alignment Check', detail: 'Verification against corporate AI ethics principles.' },
+                    { label: 'Resource Planning', detail: 'Budget and headcount for ongoing monitoring.' }
+                ],
+                outputs: ['AI Use Case Brief', 'Initial Risk Tiering', 'DPIA']
+            },
+            {
+                id: 'data',
+                title: 'Data Acquisition',
+                icon: 'database',
+                nist: ['Map', 'Measure'],
+                color: 'bg-indigo-500',
+                textColor: 'text-indigo-700',
+                description: 'Securing, cleaning, and validating the data fuel for the model.',
+                controls: [
+                    { label: 'Data Lineage Mapping', detail: 'Documenting source, ownership, and rights.' },
+                    { label: 'Bias Testing (Training Set)', detail: 'Statistical check for representation gaps.' },
+                    { label: 'Synthetic Data Strategy', detail: 'Determining if/how synthetic data is used.' },
+                    { label: 'Access Control Audit', detail: 'Enforcing "Least Privilege" access.' }
+                ],
+                outputs: ['Data Fact Sheet', 'Provenance Record', 'Bias Screening Report']
+            },
+            {
+                id: 'development',
+                title: 'Model Development',
+                icon: 'cpu',
+                nist: ['Measure'],
+                color: 'bg-purple-500',
+                textColor: 'text-purple-700',
+                description: 'The build phase where algorithms are trained and tuned.',
+                controls: [
+                    { label: 'Algorithmic Impact Assessment', detail: 'Technical review of model logic.' },
+                    { label: 'Security Threat Modeling', detail: 'Identifying attack vectors (Injection, inversion).' },
+                    { label: 'Experiment Tracking', detail: 'Logging versioning of code, data, and parameters.' },
+                    { label: 'API Security Standards', detail: 'Enforcing encryption for model endpoints.' }
+                ],
+                outputs: ['Model Version History', 'Architecture Review', 'Security Audit Logs']
+            },
+            {
+                id: 'validation',
+                title: 'Testing & Validation',
+                icon: 'shield-check',
+                nist: ['Measure', 'Manage'],
+                color: 'bg-teal-500',
+                textColor: 'text-teal-700',
+                description: 'Independent verification that the model performs safely.',
+                controls: [
+                    { label: 'Red Teaming', detail: 'Adversarial testing to force failures.' },
+                    { label: 'Backtesting', detail: 'Testing performance against "held-out" validation sets.' },
+                    { label: 'HITL Verification', detail: 'Subject matter expert review of model outputs.' },
+                    { label: 'Compliance Audit', detail: 'Meeting regulatory requirements (EU AI Act, etc.).' }
+                ],
+                outputs: ['Model Card', 'Validation Report', 'Residual Risk Log']
+            },
+            {
+                id: 'deployment',
+                title: 'Deployment',
+                icon: 'rocket',
+                nist: ['Manage'],
+                color: 'bg-green-500',
+                textColor: 'text-green-700',
+                description: 'Transitioning from sandbox to production environment.',
+                controls: [
+                    { label: 'Change Management Approval', detail: 'Final sign-off from IT and Risk committees.' },
+                    { label: 'Rollback Protocol', detail: 'Pre-defined steps if the system fails.' },
+                    { label: 'User Disclosure', detail: 'Ensuring users know they are interacting with AI.' },
+                    { label: 'Capacity Management', detail: 'Monitoring compute resources and latency.' }
+                ],
+                outputs: ['Deployment Sign-off', 'User Manual', 'Incident Response Plan']
+            },
+            {
+                id: 'monitoring',
+                title: 'Ops & Monitoring',
+                icon: 'activity',
+                nist: ['Manage', 'Govern'],
+                color: 'bg-orange-500',
+                textColor: 'text-orange-700',
+                description: 'Continuous oversight of performance and drift.',
+                controls: [
+                    { label: 'Concept Drift Alerts', detail: 'Detection of model accuracy decay.' },
+                    { label: 'Bias Drift Monitoring', detail: 'Continuous checking for disparate impact.' },
+                    { label: 'Usage Auditing', detail: 'Reviewing who is using the AI and for what.' },
+                    { label: 'Retraining Trigger', detail: 'Thresholds for when a model must be re-baselined.' }
+                ],
+                outputs: ['Performance Review', 'Health Dashboard', 'Drift Alerts']
+            },
+            {
+                id: 'retirement',
+                title: 'Decommissioning',
+                icon: 'trash-2',
+                nist: ['Manage'],
+                color: 'bg-red-500',
+                textColor: 'text-red-700',
+                description: 'Sunsetting the system and managing legacy data.',
+                controls: [
+                    { label: 'Data Retention/Purge', detail: 'Deleting data to minimize legal liability.' },
+                    { label: 'Downstream Impact Analysis', detail: 'Checking which systems break if model is off.' },
+                    { label: 'Archive Weights/Logs', detail: 'Preserving state for future regulatory discovery.' },
+                    { label: 'Transition Communications', detail: 'Informing users of termination.' }
+                ],
+                outputs: ['Disposal Certificate', 'Post-Mortem', 'Archive Index']
+            }
+        ];
+
+        const App = () => {
+            const [activeStageId, setActiveStageId] = useState(lifecycleStages[0].id);
+            const activeStage = lifecycleStages.find(s => s.id === activeStageId);
+
+            const radius = 160;
+            const center = 200;
+            const totalStages = lifecycleStages.length;
+
+            const getCoordinates = (index) => {
+                const angle = (index * (360 / totalStages) - 90) * (Math.PI / 180);
+                return {
+                    x: center + radius * Math.cos(angle),
+                    y: center + radius * Math.sin(angle)
+                };
+            };
+
+            return (
+                <div className="min-h-screen pb-20">
+                    <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+                        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                                    <Icon name="shield-check" className="text-blue-600 w-6 h-6" />
+                                    AI Lifecycle Governance Wheel
+                                </h1>
+                                <p className="text-slate-500 text-sm">Interactive "Life Event" Mapping for AI Systems</p>
+                            </div>
+                            <div className="flex gap-2">
+                                {['Govern', 'Map', 'Measure', 'Manage'].map(func => (
+                                    <span key={func} className="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase rounded-full border border-slate-200 tracking-wider">
+                                        {func}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* CIRCULAR VISUALIZATION */}
+                        <div className="relative flex justify-center items-center">
+                            <svg viewBox="0 0 400 400" className="w-full max-w-[500px] h-auto drop-shadow-2xl overflow-visible">
+                                <circle cx={center} cy={center} r={radius} fill="none" stroke="#e2e8f0" strokeWidth="40" />
+                                
+                                {lifecycleStages.map((_, i) => {
+                                    const start = getCoordinates(i);
+                                    const nextIndex = (i + 1) % totalStages;
+                                    const end = getCoordinates(nextIndex);
+                                    return (
+                                        <line key={`line-${i}`} x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke="#94a3b8" strokeWidth="1" strokeDasharray="4 4" />
+                                    );
+                                })}
+
+                                {lifecycleStages.map((stage, i) => {
+                                    const pos = getCoordinates(i);
+                                    const isActive = activeStageId === stage.id;
+                                    return (
+                                        <g key={stage.id} className="cursor-pointer transition-all duration-300" onClick={() => setActiveStageId(stage.id)}>
+                                            {isActive && <circle cx={pos.x} cy={pos.y} r="32" className={`${stage.color} opacity-20`} />}
+                                            <circle cx={pos.x} cy={pos.y} r="26" fill="white" stroke={isActive ? 'currentColor' : '#cbd5e1'} strokeWidth={isActive ? '4' : '1'} className={`${isActive ? stage.textColor : 'text-slate-300'}`} />
+                                            <foreignObject x={pos.x - 10} y={pos.y - 10} width="20" height="20" className={`${isActive ? stage.textColor : 'text-slate-400'}`}>
+                                                <div className="flex items-center justify-center">
+                                                    <Icon name={stage.icon} className="w-5 h-5" />
+                                                </div>
+                                            </foreignObject>
+                                            <text x={pos.x} y={pos.y + 42} textAnchor="middle" className={`text-[10px] font-bold uppercase tracking-tighter ${isActive ? 'fill-slate-900' : 'fill-slate-400'}`}>
+                                                {stage.id}
+                                            </text>
+                                        </g>
+                                    );
+                                })}
+
+                                <circle cx={center} cy={center} r="60" fill="white" className="shadow-inner" />
+                                <foreignObject x={center - 40} y={center - 40} width="80" height="80">
+                                    <div className="w-full h-full flex flex-col items-center justify-center text-center p-2">
+                                        <Icon name="refresh-ccw" className="text-slate-300 mb-1 w-6 h-6" />
+                                        <span className="text-[10px] font-bold text-slate-400 leading-none uppercase">Cycle</span>
+                                    </div>
+                                </foreignObject>
+                            </svg>
+                        </div>
+
+                        {/* DETAIL PANEL */}
+                        <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden min-h-[580px] flex flex-col">
+                            <div className={`${activeStage.color} p-8 text-white relative`}>
+                                <div className="absolute top-8 right-8 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold backdrop-blur-md uppercase">
+                                    NIST: {activeStage.nist.join(' + ')}
+                                </div>
+                                <h2 className="text-4xl font-bold mb-4">{activeStage.title}</h2>
+                                <p className="text-white/90 text-sm leading-relaxed max-w-md">{activeStage.description}</p>
+                            </div>
+
+                            <div className="p-8 flex-1">
+                                <section className="mb-8">
+                                    <div className="flex items-center justify-between mb-4 border-b border-slate-100 pb-2">
+                                        <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                                            <Icon name="alert-circle" className="w-4 h-4" /> Gate Controls
+                                        </h3>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        {activeStage.controls.map((control, i) => (
+                                            <div key={i} className="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                                <p className="font-bold text-slate-800 text-[13px] leading-tight mb-1">{control.label}</p>
+                                                <p className="text-slate-500 text-[11px] leading-snug">{control.detail}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-slate-100 pb-2">
+                                        <Icon name="file-text" className="w-4 h-4" /> Artifacts
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {activeStage.outputs.map((output, i) => (
+                                            <div key={i} className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 shadow-sm">
+                                                <Icon name="file-text" className={`w-3 h-3 ${activeStage.textColor}`} />
+                                                {output}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+                            </div>
+                            
+                            <div className="bg-slate-900 text-white/70 p-4 text-[11px] flex items-center gap-3">
+                                <Icon name="info" className="text-blue-400 shrink-0 w-4 h-4" />
+                                <p><strong className="text-white">Pro Tip:</strong> Ensure that the <strong>{activeStage.outputs[0]}</strong> is approved before proceeding.</p>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
