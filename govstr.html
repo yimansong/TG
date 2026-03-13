@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance Framework Visualization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .pillar-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="shield-check" class="text-indigo-600 w-8 h-8"></i>
+                <h1 class="text-xl font-bold tracking-tight uppercase">AI Governance</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-500">
+                <a href="#pillar-people" class="hover:text-indigo-600 transition">People</a>
+                <a href="#pillar-policies" class="hover:text-indigo-600 transition">Policies</a>
+                <a href="#pillar-procedures" class="hover:text-indigo-600 transition">Procedures</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-slate-900 sm:text-5xl mb-4">The Three Pillars</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                A robust structure for responsible AI use, focusing on accountability, clear guardrails, and standardized processes.
+            </p>
+        </div>
+
+        <!-- Pillars Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <!-- People -->
+            <a href="#pillar-people" class="pillar-card block p-8 bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-blue-500 group">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">People</h3>
+                <p class="text-slate-500 mb-4">Hierarchy of responsibility and human expertise required for oversight.</p>
+                <div class="text-blue-600 font-semibold text-sm flex items-center">
+                    View Details <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+            <!-- Policies -->
+            <a href="#pillar-policies" class="pillar-card block p-8 bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-amber-500 group">
+                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <i data-lucide="file-text"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Policies</h3>
+                <p class="text-slate-500 mb-4">Mandatory guardrails defining permitted and prohibited AI activities.</p>
+                <div class="text-amber-600 font-semibold text-sm flex items-center">
+                    View Details <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+
+            <!-- Procedures -->
+            <a href="#pillar-procedures" class="pillar-card block p-8 bg-white rounded-2xl shadow-sm border border-slate-200 border-t-4 border-t-emerald-500 group">
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i data-lucide="git-merge"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Procedures</h3>
+                <p class="text-slate-500 mb-4">Step-by-step processes through the AI solution lifecycle.</p>
+                <div class="text-emerald-600 font-semibold text-sm flex items-center">
+                    View Details <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Pillar Section: People -->
+        <section id="pillar-people" class="mb-24 pt-16">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="p-2 bg-blue-100 text-blue-700 rounded-md"><i data-lucide="users" class="w-6 h-6"></i></div>
+                <h2 class="text-3xl font-bold">Pillar I: People</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Leadership -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h4 class="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4">Strategic Leadership</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">Chief AI Officer</div>
+                            <p class="ml-2 text-sm text-slate-500">— Ultimate strategy & risk accountability.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">AI Ethics Board</div>
+                            <p class="ml-2 text-sm text-slate-500">— Cross-functional guidance for sensitive cases.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Operational -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h4 class="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4">Operational Execution</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">Solution Owners</div>
+                            <p class="ml-2 text-sm text-slate-500">— Business-level compliance responsibility.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">Data Stewards</div>
+                            <p class="ml-2 text-sm text-slate-500">— Privacy & data quality management.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">AI Engineers</div>
+                            <p class="ml-2 text-sm text-slate-500">— Technical build & ethical deployment.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h4 class="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4">Oversight & Support</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">Auditors</div>
+                            <p class="ml-2 text-sm text-slate-500">— Regular adherence reviews.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">Legal/Compliance</div>
+                            <p class="ml-2 text-sm text-slate-500">— Regulatory monitoring & contracts.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="font-semibold text-slate-800">AI Trainers</div>
+                            <p class="ml-2 text-sm text-slate-500">— Staff awareness & education.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar Section: Policies -->
+        <section id="pillar-policies" class="mb-24 pt-16">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="p-2 bg-amber-100 text-amber-700 rounded-md"><i data-lucide="file-text" class="w-6 h-6"></i></div>
+                <h2 class="text-3xl font-bold">Pillar II: Policies</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Acceptable Use -->
+                <div class="flex items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="mr-6 p-3 bg-amber-50 text-amber-600 rounded-full"><i data-lucide="check-circle"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Acceptable Use (AUP)</h4>
+                        <p class="text-sm text-slate-500">Guidelines for public LLMs (no PII/trade secrets) and prohibited use cases.</p>
+                    </div>
+                </div>
+                <!-- Data Gov -->
+                <div class="flex items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="mr-6 p-3 bg-amber-50 text-amber-600 rounded-full"><i data-lucide="database"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Data Governance & Privacy</h4>
+                        <p class="text-sm text-slate-500">Protocols for anonymization and encryption for AI training sets.</p>
+                    </div>
+                </div>
+                <!-- Vendors -->
+                <div class="flex items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="mr-6 p-3 bg-amber-50 text-amber-600 rounded-full"><i data-lucide="truck"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Vendor Management</h4>
+                        <p class="text-sm text-slate-500">Third-party vetting and updated NDAs protecting proprietary training.</p>
+                    </div>
+                </div>
+                <!-- Explainability -->
+                <div class="flex items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="mr-6 p-3 bg-amber-50 text-amber-600 rounded-full"><i data-lucide="eye"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Transparency</h4>
+                        <p class="text-sm text-slate-500">Mandatory disclosure of AI interaction and interpretable outputs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar Section: Procedures -->
+        <section id="pillar-procedures" class="mb-24 pt-16">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="p-2 bg-emerald-100 text-emerald-700 rounded-md"><i data-lucide="git-merge" class="w-6 h-6"></i></div>
+                <h2 class="text-3xl font-bold">Pillar III: Procedures</h2>
+            </div>
+            
+            <!-- Lifecycle Stepper -->
+            <div class="relative">
+                <!-- Vertical Line (Desktop only) -->
+                <div class="absolute left-8 top-0 bottom-0 w-1 bg-emerald-100 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- Phase 1 -->
+                    <div class="relative pl-0 md:pl-20">
+                        <div class="hidden md:flex absolute left-4 top-0 w-8 h-8 bg-emerald-500 text-white rounded-full items-center justify-center font-bold z-10 shadow-lg">1</div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-xl font-bold mb-4 flex items-center">
+                                <span class="md:hidden mr-2 p-1 bg-emerald-500 text-white rounded text-sm px-2">1</span>
+                                Intake & Evaluation
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Formal Intake</div>
+                                    <p class="text-sm text-slate-600">Submit ideas to evaluate business value, feasibility, and initial risk.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Capacity Planning</div>
+                                    <p class="text-sm text-slate-600">Forecast API tokens and GPU costs to prevent budget overruns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="relative pl-0 md:pl-20">
+                        <div class="hidden md:flex absolute left-4 top-0 w-8 h-8 bg-emerald-500 text-white rounded-full items-center justify-center font-bold z-10 shadow-lg">2</div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-xl font-bold mb-4 flex items-center">
+                                <span class="md:hidden mr-2 p-1 bg-emerald-500 text-white rounded text-sm px-2">2</span>
+                                Development & Risk
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Iterative Risk Assessment</div>
+                                    <p class="text-sm text-slate-600">Assessments at Idea, Prototype, and Pre-Deployment stages.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Bias Testing</div>
+                                    <p class="text-sm text-slate-600">Standardized testing for unfair discrimination in datasets/outputs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="relative pl-0 md:pl-20">
+                        <div class="hidden md:flex absolute left-4 top-0 w-8 h-8 bg-emerald-500 text-white rounded-full items-center justify-center font-bold z-10 shadow-lg">3</div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-xl font-bold mb-4 flex items-center">
+                                <span class="md:hidden mr-2 p-1 bg-emerald-500 text-white rounded text-sm px-2">3</span>
+                                Deployment & Control
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Least Privilege</div>
+                                    <p class="text-sm text-slate-600">Agents receive minimum access required for specific tasks.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Human-in-the-Loop</div>
+                                    <p class="text-sm text-slate-600">Define critical points for mandatory human review/approval.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="relative pl-0 md:pl-20">
+                        <div class="hidden md:flex absolute left-4 top-0 w-8 h-8 bg-emerald-500 text-white rounded-full items-center justify-center font-bold z-10 shadow-lg">4</div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                            <h4 class="text-xl font-bold mb-4 flex items-center">
+                                <span class="md:hidden mr-2 p-1 bg-emerald-500 text-white rounded text-sm px-2">4</span>
+                                Maintenance & Retirement
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Performance Monitor</div>
+                                    <p class="text-sm text-slate-600">Regular checks for "model drift" and performance degradation.</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                    <div class="font-semibold text-emerald-700 text-sm mb-1 uppercase tracking-wider">Decommissioning</div>
+                                    <p class="text-sm text-slate-600">Secure archiving and credential revocation upon retirement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">AI Governance Framework Visualization &copy; 2024</p>
+            <p class="mt-2 text-xs opacity-50 italic">Confidential Internal Document</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
