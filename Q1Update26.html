@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Technology Benchmarks 2024-2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; height: 50vh; width: 100%; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-6 border border-slate-200">
+        <div class="mb-8 text-center border-b pb-6 border-slate-100">
+            <h1 class="text-3xl font-bold text-slate-800">AI Development Benchmarks</h1>
+            <p class="text-slate-500 mt-2 text-lg">March 2026 Edition</p>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="benchmarkChart"></canvas>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <!-- General Knowledge -->
+            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <h3 class="font-bold text-blue-800 text-[10px] uppercase tracking-wider">MMLU</h3>
+                </div>
+                <p class="text-2xl font-black text-blue-900">94.1%</p>
+                <p class="text-[10px] text-blue-500 font-bold mt-1">Saturated</p>
+            </div>
+
+            <!-- Reasoning -->
+            <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                    <h3 class="font-bold text-purple-800 text-[10px] uppercase tracking-wider">GPQA</h3>
+                </div>
+                <p class="text-2xl font-black text-purple-900">93.8%</p>
+                <p class="text-[10px] text-purple-500 font-bold mt-1">Superhuman</p>
+            </div>
+
+            <!-- Multimodal -->
+            <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    <h3 class="font-bold text-amber-800 text-[10px] uppercase tracking-wider">Video-MME</h3>
+                </div>
+                <p class="text-2xl font-black text-amber-900">84.8%</p>
+                <p class="text-[10px] text-amber-500 font-bold mt-1">+46.8% Gain</p>
+            </div>
+
+            <!-- Coding Agency -->
+            <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 shadow-sm">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <h3 class="font-bold text-emerald-800 text-[10px] uppercase tracking-wider">SWE-bench</h3>
+                </div>
+                <p class="text-2xl font-black text-emerald-900">80.9%</p>
+                <p class="text-[10px] text-emerald-500 font-bold mt-1">Task Success</p>
+            </div>
+
+            <!-- General Agency -->
+            <div class="bg-rose-50 p-4 rounded-xl border border-rose-100 shadow-sm">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    <h3 class="font-bold text-rose-800 text-[10px] uppercase tracking-wider">Terminal-B</h3>
+                </div>
+                <p class="text-2xl font-black text-rose-900">57.6%</p>
+                <p class="text-[10px] text-rose-500 font-bold mt-1">Current Wall</p>
+            </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                <h4 class="font-bold text-slate-700 text-sm mb-3">Multimodal Leap (Amber)</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    2025 marked the move to <strong>Native Multimodality</strong>. Benchmarks like Video-MME now test temporal reasoning—understanding why an event happened over a 60-minute window, rather than just describing a static frame.
+                </p>
+            </div>
+            <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
+                <h4 class="font-bold text-emerald-800 text-sm mb-3">Closed-Loop Coding</h4>
+                <p class="text-xs text-emerald-700 leading-relaxed">
+                    Coding success (80.9%) is driven by <strong>Self-Correction</strong>. The model acts as an agent that can compile, test, and iterate until the benchmark passes, which is why it far outpaces open-world agency.
+                </p>
+            </div>
+            <div class="bg-rose-50 p-5 rounded-xl border border-rose-100">
+                <h4 class="font-bold text-rose-800 text-sm mb-3">The Reliability Gap</h4>
+                <p class="text-xs text-rose-700 leading-relaxed">
+                    General Agency (Terminal-Bench) lacks a clear "pass/fail" sensor. A single mistake in a system admin task can lead to <strong>Spaghetti Divergence</strong>, explaining the current ~57% plateau.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-6 text-center text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+            Data Source: Artificial Analysis (Q1 2026) • Stanford HAI • METR Audit Reports
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('benchmarkChart').getContext('2d');
+        const labels = ['Mar 2024', 'July 2024', 'Nov 2024', 'Mar 2025', 'July 2025', 'Nov 2025', 'Mar 2026'];
+        
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'MMLU (Knowledge)',
+                    data: [86.4, 88.5, 91.2, 93.0, 93.5, 93.8, 94.1],
+                    borderColor: '#3b82f6',
+                    borderDash: [5, 5],
+                    tension: 0.3,
+                    borderWidth: 2,
+                    pointRadius: 0
+                },
+                {
+                    label: 'GPQA (Reasoning)',
+                    data: [55.0, 62.0, 77.3, 84.6, 92.4, 93.1, 93.8],
+                    borderColor: '#a855f7',
+                    tension: 0.3,
+                    borderWidth: 2,
+                    pointRadius: 0
+                },
+                {
+                    label: 'Multimodal (Video-MME)',
+                    data: [38.0, 45.0, 56.0, 64.0, 75.0, 81.2, 84.8],
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    borderWidth: 4,
+                    pointRadius: 4
+                },
+                {
+                    label: 'Coding Agency (SWE-bench)',
+                    data: [15.0, 24.0, 43.8, 65.0, 75.0, 78.2, 80.9],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    borderWidth: 4,
+                    pointStyle: 'triangle',
+                    pointRadius: 6
+                },
+                {
+                    label: 'General Agency (Terminal-Bench)',
+                    data: [8.0, 12.5, 22.0, 31.0, 44.5, 53.0, 57.6],
+                    borderColor: '#f43f5e',
+                    backgroundColor: 'rgba(244, 63, 94, 0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    borderWidth: 4,
+                    pointStyle: 'rectRot',
+                    pointRadius: 6
+                }
+            ]
+        };
+
+        new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { boxWidth: 12, padding: 15, font: { size: 11, family: "'Inter', sans-serif", weight: '600' } } 
+                    },
+                    tooltip: {
+                        padding: 12,
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        callbacks: { label: (context) => ` ${context.dataset.label}: ${context.parsed.y}%` }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 0, max: 100,
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { stepSize: 20, callback: value => value + '%', font: { size: 11 } }
+                    },
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
