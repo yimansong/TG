@@ -1,0 +1,244 @@
+import React from 'react';
+import { 
+  TrendingUp, 
+  ShieldCheck, 
+  Coins, 
+  Hexagon, 
+  Cpu, 
+  Globe, 
+  Wind, 
+  Sparkles,
+  BarChart3,
+  Unlock,
+  Building2
+} from 'lucide-react';
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans p-4 md:p-8">
+      
+      {/* Header Section */}
+      <header className="max-w-6xl mx-auto mb-10">
+        <div className="flex items-center gap-3 mb-2">
+          <Unlock className="w-8 h-8 text-blue-600" strokeWidth={2} />
+          <h2 className="text-blue-600 font-bold tracking-wider uppercase text-sm">Executive Briefing</h2>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          2025: The Year Open Source AI <br className="hidden md:block"/> Reached the Frontier
+        </h1>
+        <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
+          In 2025, the AI landscape fundamentally shifted. Open-source models closed the capability gap with proprietary systems, offering enterprise-grade reasoning, coding, and multi-modal features at a fraction of the cost, while guaranteeing complete data privacy.
+        </p>
+      </header>
+
+      {/* KPI Banner */}
+      <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex items-start gap-4">
+          <div className="p-3 bg-emerald-100 text-emerald-700 rounded-xl">
+            <Coins className="w-6 h-6" />
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-slate-900">~75%</p>
+            <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Reduction in Inference Costs</p>
+            <p className="text-xs text-slate-400 mt-1">Versus equivalent proprietary APIs</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex items-start gap-4">
+          <div className="p-3 bg-blue-100 text-blue-700 rounded-xl">
+            <TrendingUp className="w-6 h-6" />
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-slate-900">128k+</p>
+            <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Standard Context Windows</p>
+            <p className="text-xs text-slate-400 mt-1">Enabling full-document enterprise RAG</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex items-start gap-4">
+          <div className="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+            <ShieldCheck className="w-6 h-6" />
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-slate-900">100%</p>
+            <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Data Sovereignty</p>
+            <p className="text-xs text-slate-400 mt-1">Zero data leakage to 3rd party providers</p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Big 5 Players */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+          <Building2 className="w-6 h-6 text-slate-400" />
+          The Vanguard: Main Open Source Players of 2025
+        </h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* DeepSeek */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-t-4 border-red-500 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2">
+                <Cpu className="w-6 h-6 text-red-500" />
+                <h4 className="text-xl font-bold text-slate-900">DeepSeek</h4>
+              </div>
+              <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded-full">The Disruptor</span>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">
+              Changed the industry economics with <strong>DeepSeek R1</strong> and <strong>V3</strong>. Delivered proprietary-level reasoning (comparable to OpenAI o1) trained on a fraction of the budget. 
+            </p>
+            <div className="bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">
+              <span className="font-semibold text-slate-700">Flagship:</span> DeepSeek R1 (671B MoE)<br/>
+              <span className="font-semibold text-slate-700">Enterprise Use:</span> Complex reasoning & coding tasks.
+            </div>
+          </div>
+
+          {/* Meta */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-t-4 border-blue-600 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2">
+                <Hexagon className="w-6 h-6 text-blue-600" />
+                <h4 className="text-xl font-bold text-slate-900">Meta</h4>
+              </div>
+              <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">The Heavyweight</span>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">
+              Solidified open-source dominance with the <strong>Llama 4</strong> series (Scout & Maverick). Scaled up to massive parameter counts with advanced agentic and multimodal workflows.
+            </p>
+            <div className="bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">
+              <span className="font-semibold text-slate-700">Flagship:</span> Llama 4 Maverick (400B)<br/>
+              <span className="font-semibold text-slate-700">Enterprise Use:</span> General-purpose enterprise RAG.
+            </div>
+          </div>
+
+          {/* Alibaba / Qwen */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-t-4 border-purple-600 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2">
+                <Globe className="w-6 h-6 text-purple-600" />
+                <h4 className="text-xl font-bold text-slate-900">Alibaba (Qwen)</h4>
+              </div>
+              <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded-full">The Global Power</span>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">
+              The <strong>Qwen 3</strong> and 2.5 series became the most downloaded local models. Unmatched in multilingual capabilities and highly specialized coding iterations.
+            </p>
+            <div className="bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">
+              <span className="font-semibold text-slate-700">Flagship:</span> Qwen 3 (235B MoE)<br/>
+              <span className="font-semibold text-slate-700">Enterprise Use:</span> Global/Multilingual deployments.
+            </div>
+          </div>
+
+          {/* Mistral */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-t-4 border-orange-500 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2">
+                <Wind className="w-6 h-6 text-orange-500" />
+                <h4 className="text-xl font-bold text-slate-900">Mistral AI</h4>
+              </div>
+              <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded-full">The Efficiency Expert</span>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">
+              Led the Small Language Model (SLM) revolution with <strong>Mistral Small 3</strong> and Pixtral. Proved that massive compute isn't required for high-tier enterprise performance.
+            </p>
+            <div className="bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">
+              <span className="font-semibold text-slate-700">Flagship:</span> Mistral Small 3 / Large 2<br/>
+              <span className="font-semibold text-slate-700">Enterprise Use:</span> Low-latency edge & on-device AI.
+            </div>
+          </div>
+
+          {/* Google Gemma */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border-t-4 border-teal-500 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-teal-500" />
+                <h4 className="text-xl font-bold text-slate-900">Google (Gemma)</h4>
+              </div>
+              <span className="bg-teal-100 text-teal-700 text-xs font-bold px-2 py-1 rounded-full">The Ecosystem Pick</span>
+            </div>
+            <p className="text-slate-600 text-sm mb-4">
+              Leveraged Gemini research to release the highly optimized <strong>Gemma 3</strong> open weights. Seamlessly integrated into existing developer stacks and cloud architectures.
+            </p>
+            <div className="bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">
+              <span className="font-semibold text-slate-700">Flagship:</span> Gemma 3 (27B)<br/>
+              <span className="font-semibold text-slate-700">Enterprise Use:</span> Rapid, secure cloud integration.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Why it Matters / The Business Case */}
+      <section className="max-w-6xl mx-auto bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+        <div className="flex items-center gap-3 mb-8">
+          <BarChart3 className="w-8 h-8 text-blue-400" />
+          <h3 className="text-2xl md:text-3xl font-bold">The Strategic Advantage for 2026</h3>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-blue-400">
+              <span className="text-xl font-bold">1</span>
+            </div>
+            <h4 className="text-xl font-semibold mb-2">Escaping Vendor Lock-in</h4>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Relying solely on proprietary APIs creates dependency. The open-source tier now allows us to self-host equivalent capabilities, ensuring pricing leverage and operational continuity.
+            </p>
+          </div>
+          <div>
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-emerald-400">
+              <span className="text-xl font-bold">2</span>
+            </div>
+            <h4 className="text-xl font-semibold mb-2">Customization & Agentic AI</h4>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              2025 shifted focus from standalone chat models to "Agentic Systems". Open weights allow our engineering teams to fine-tune models on proprietary company data without restriction.
+            </p>
+          </div>
+          <div>
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-purple-400">
+              <span className="text-xl font-bold">3</span>
+            </div>
+            <h4 className="text-xl font-semibold mb-2">Regulatory Compliance</h4>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              With stricter data regulations worldwide, open-source models deployed on our own secure infrastructure ensure 100% compliance for our most sensitive customer data workflows.
+            </p>
+          </div>
+        </div>
+
+        {/* Visual Bar Chart Mockup */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Capability Equivalency (MMLU / Reasoning Benchmarks)</h4>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between text-sm mb-1">
+                <span className="text-slate-300">Proprietary Frontier (GPT-4.5 / Claude 3.5)</span>
+                <span className="font-bold">~88-90%</span>
+              </div>
+              <div className="w-full bg-slate-800 rounded-full h-3">
+                <div className="bg-blue-500 h-3 rounded-full" style={{ width: '90%' }}></div>
+              </div>
+            </div>
+            <div>
+              <div className="flex justify-between text-sm mb-1">
+                <span className="text-slate-300">2025 Open Source (DeepSeek R1 / Llama 4)</span>
+                <span className="font-bold text-emerald-400">~87-89%</span>
+              </div>
+              <div className="w-full bg-slate-800 rounded-full h-3">
+                <div className="bg-emerald-400 h-3 rounded-full" style={{ width: '88%' }}></div>
+              </div>
+            </div>
+            <div>
+              <div className="flex justify-between text-sm mb-1">
+                <span className="text-slate-500">2023 Open Source (Llama 2 era)</span>
+                <span className="font-bold text-slate-500">~68-70%</span>
+              </div>
+              <div className="w-full bg-slate-800 rounded-full h-3">
+                <div className="bg-slate-600 h-3 rounded-full" style={{ width: '70%' }}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
